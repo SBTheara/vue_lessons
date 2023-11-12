@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./vue@2.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <center>ax2+bx+c</center><br><br>
+        <input type="text" v-model="a"> X2
+        <input type="text" v-model="b"> X
+        <input type="text" v-model="c"> <br><br>
+        <label for="">x1={{result.x1}}</label>
+        <label for="">x2={{result.x2}}</label>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                a: 1,
+                b: 1,
+                c: 1
+            },
+            computed: {
+                result() {
+                    let beta = (this.b + this.b) - 4 * (this.a * this.c)
+                    let x1, x2
+                    if (beta > 0) {
+                        x1 = (-1 * (this.b) + Math.sqrt(beta)) / (2 * this.a);
+                        x2 = (-1 * (this.b) - Math.sqrt(beta)) / (2 * this.a);
+                    } else if (beta == 0) {
+                        x1 = x2 = -1 * (this.b) / (this.a * 2);
+                    } else {
+                        x1 = x2 = "No root"
+                    }
+                    return {
+                        x1: x1,
+                        x2: x2,
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue@2.js"></script>
+</head>
+<body>
+    <div id="app">
+        Name: <input type="text" name="" id="" v-model="name"><br><br>
+        Price: <input type="text" name="" id="" v-model="price"><br><br>
+        Qty: <input type="text" name="" id="" v-model="qty"><br><br>
+        <button type="submit" @click="submit">Submit</button><br><br>
+        <table border="1px">
+            <thead>
+                <tr align="center">
+                    <th width="100px">Name</th>
+                    <th width="100px">Price</th>
+                    <th width="100px">Qty</th>
+                    <th width="100px">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="info in infos" align="center">
+                    <td>{{info.name}}</td>
+                    <td>{{info.price}}</td>
+                    <td>{{info.qty}}</td>
+                    <td>{{info.qty*info.price}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name: null,
+                price: null,
+                qty: null,
+                infos: []
+            },
+            methods:{
+                submit(){
+                    this.infos.push(
+                        {
+                            name: this.name,
+                            price: this.price,
+                            qty: this.qty
+                        }
+                    )
+                }
+            }
+        });
+    </script>
+</body>
+</html>
