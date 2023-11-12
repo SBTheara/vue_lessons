@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue@2.js"></script>
+</head>
+
+<body>
+    <div id="app-6">
+        Name : <input type="text" name="inputName" id="" v-model="name"><br><br>
+        Gender : <input type="text" name="inputGender" id="" v-model="gender"><br><br>
+        Score : <input type="text" name="inputScore" id="" v-model="score"><br><br>
+        <button type="submit" @click="addNewPerson">Submit</button>
+        <button type="submit" @click="updatePerson">Update</button>
+        <ul>
+            <li v-for="(person,index) in people">
+                {{person.name}}, {{person.gender}}, {{person.score}}
+                <button @click="deletePerson(index)"> Delete</button>
+                <button @click="clickEvent(index)"> Edit</button>
+            </li>
+        </ul>
+        <table border="2px">
+            <tr>
+                <th width="100px">Name</th>
+                <th width="100px">Gender</th>
+                <th width="100px">Score</th>
+                <th width="100px">Delete</th>
+                <th width="100px">Update</th>
+
+            </tr>
+            <tr v-for="(person,index) in people" align="center">
+                <td>{{person.name}}</td>
+                <td>{{person.gender}}</td>
+                <td>{{person.score}}</td>
+                <td><button @click="deletePerson(index)">Delete</button></td>
+                <td><button @click="clickEvent(index)">Edit</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        new Vue({
+            el: "#app-6",
+            data: {
+                index: "",
+                name: "",
+                gender: "",
+                score: "",
+                people: []
+            },
+            methods: {
+                addNewPerson() {
+                    this.people.push(
+                        {
+                            name: this.name,
+                            gender: this.gender,
+                            score: this.score
+                        })
+                    this.clearTextbox();
+                },
+                clearTextbox() {
+                    this.name = "";
+                    this.gender = "";
+                    this.score = "";
+                },
+                deletePerson(index) {
+                    this.people.splice(index, 1);
+                },
+                clickEvent(index) {
+                    this.name = this.people[index].name;
+                    this.gender = this.people[index].gender;
+                    this.score = this.people[index].score;
+                    this.index = index;
+                },
+                updatePerson() {
+                    this.people[this.index].name = this.name,
+                        this.people[this.index].gender = this.gender,
+                        this.people[this.index].score = this.score
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

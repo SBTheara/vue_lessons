@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.7.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <p>This is : {{title}}</p>
+        <input type="text" id ="input" v-model = "message">
+        <p>This is the message : {{message}} .</p>
+        <input type="text" id="tinput" v-model = "title">
+        <p>Change the title here: {{title}}</p>
+        <input type="text" id="dinput" v-model="description">
+        <h3>{{description}}</h3>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#root",
+            data: {
+                message: 'Hello world',
+                title: 'My title',
+                description: 'Welcome to my hello world application '
+            }
+        })
+    </script>
+</body>
+</html>

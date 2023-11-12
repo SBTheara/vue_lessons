@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.7.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <ol>
+            <li v-for="todo in todos">{{todo.text}} and {{todo.number}}</li>
+        </ol>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#root",
+            data: {
+                todos: [
+                    {text : "Learn JavaScript",number:1},
+                    {text : "Learn Vue",number:2},
+                    {text : "Learn Web",number:3},
+                    {text : "Build something awesome",number:4}
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

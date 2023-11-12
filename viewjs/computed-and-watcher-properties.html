@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+    <div id="app-6">
+        <input type="text" name="" id="" v-model="input">
+        <h1>{{reveredMessage}}</h1>
+        <h2>{{answer}}</h2>
+    </div>
+    <script>
+        new Vue({
+            el: "#app-6",
+            data: {
+                input: 'Hello',
+                message: 'Hello world',
+                answer: ""
+            },
+            computed: {
+                reveredMessage: function () {
+                    return this.message.split("").reverse().join("");
+                }
+            },
+            watch: {
+                input(condition) {
+                    if (condition == "Hello world") {
+                        this.answer = "Hi hello tver ey ng"
+                    } else {
+                        this.answer = "Ekerk ekerk"
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

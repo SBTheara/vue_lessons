@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+    <div id="app-6">
+        <input type="text" name="" v-model="input" id="" placeholder="Please input the value : "><br><br>
+        <button v-model = "input" @click = "addstring">Add value </button>
+        <button v-model = "output" @click = "inputOutput">Show alert </button>
+        <ul>
+            <li v-for="value in inputs">{{value}}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: "#app-6",
+            data: {
+                output: 'Hello',
+                input:"",
+                inputs: ["Helloworld","HelloEarch"]
+            },
+            methods: {
+                inputOutput(){ // method for call by click event of button
+                    this.output = 'Hee pg tver ey ng' // replace value of input
+                    alert(this.output); // alert message when click button
+                },
+                addstring(){
+                    this.inputs.push(this.input)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
