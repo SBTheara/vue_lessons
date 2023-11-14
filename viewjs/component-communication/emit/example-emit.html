@@ -9,7 +9,7 @@
 <body>
     <div id="root">
         <textinput @is-show="onClickShow"></textinput>
-        <label for="msg" v-show="isDisplay"></label>
+        <label for="msg" v-if="isDisplay">Hello form the outside</label>
     </div>
     <script src="example-emit.js"></script>
 </body>

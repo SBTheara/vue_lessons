@@ -1,7 +1,7 @@
 Vue.component('textinput', {
     template: `
         <div>
-            <input type="text" v-model="message">
+            <input type="text">
             <button @click="onClickShow">Show</button>
         </div>
     `,
