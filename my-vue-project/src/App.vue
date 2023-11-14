@@ -1,26 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="app">
+      <MessageView>Hello theara</MessageView>
+      <MessageView>Hello Nan</MessageView>
+      <MessageView>Hello From the bottom of the heart</MessageView>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MessageView from './components/MessageView.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: 'app',
+  components: {MessageView},
+  data(){
+    return{
+
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
