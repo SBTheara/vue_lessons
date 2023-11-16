@@ -18,7 +18,7 @@
                         </v-list-item-content>
 
                         <v-list-item-action>
-                            <v-icon @click="getInfo(task.id)">mdi-information</v-icon>
+                            <v-icon @click.stop="getInfo(task.id)">mdi-information</v-icon>
                         </v-list-item-action>
 
                     </template>
