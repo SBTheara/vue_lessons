@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="/vue@2.js"></script>
+    <script src="../vue@2.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.5.0/dist/vuetify.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.5.0/dist/vuetify.js"></script>
 </head>
 <body>
     <div id="root">
         <center><dbinput></dbinput></center>
     </div>
     <script src="validate-only-number.js"></script>
+    <script>
+        new Vue({
+            el: "#root",
+        });
+    </script>
 </body>
 </html>
